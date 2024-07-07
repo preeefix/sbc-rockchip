@@ -26,7 +26,7 @@ jobs:
       packages: write
       pull-requests: read
     runs-on:
-      - pkgs
+      - ubuntu-latest
     if: (!startsWith(github.head_ref, 'renovate/') && !startsWith(github.head_ref, 'dependabot/'))
     services:
       buildkitd:
