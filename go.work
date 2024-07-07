@@ -3,6 +3,7 @@ go 1.22.4
 use (
 	./installers/nanopi-r4s/src
 	./installers/orangepi-r1-plus-lts/src
+    ./installers/libretech-roc-rk3328-cc
 	./installers/rock64/src
 	./installers/rockpi4/src
 	./installers/rockpi4c/src

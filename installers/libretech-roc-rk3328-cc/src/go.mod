@@ -1,4 +1,4 @@
-module orangepi-r1-plus-lts
+module libretech-roc-rk3328-cc
 
 go 1.22.1
 
