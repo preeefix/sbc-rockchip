@@ -1,0 +1,25 @@
+name: libretech-roc-rk3328-cc
+variant: scratch
+shell: /toolchain/bin/bash
+dependencies:
+  - stage: base
+steps:
+  - env:
+      GOPATH: /go
+    cachePaths:
+      - /.cache/go-build
+      - /go/pkg
+    build:
+      - |
+        export PATH=${PATH}:${TOOLCHAIN}/go/bin
+
+        cd /pkg/src
+        CGO_ENABLED=0 go build -o ./libretech-roc-rk3328-cc .
+    install:
+      - |
+        mkdir -p /rootfs/installers/
+
+        cp /pkg/src/libretech-roc-rk3328-cc /rootfs/installers/libretech-roc-rk3328-cc
+finalize:
+  - from: /rootfs
+    to: /rootfs
