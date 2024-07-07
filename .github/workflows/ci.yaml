@@ -25,6 +25,8 @@ jobs:
       issues: read
       packages: write
       pull-requests: read
+    runs-on:
+      - pkgs
     if: (!startsWith(github.head_ref, 'renovate/') && !startsWith(github.head_ref, 'dependabot/'))
     services:
       buildkitd:
